@@ -47,7 +47,7 @@ const calculated = reactive<Record<string, ComputedRef<number>>>({
     const deltaGram = Math.abs(newest - oldest);
     const sampleCount = Math.max(weights.length - 1, 1);
     const avgDeltaPerSample = deltaGram / sampleCount;
-    const intervalSeconds = 0.1;
+    const intervalSeconds = 2;
 
     // 1 g ≈ 1 mL untuk cairan infus, lalu ubah ke L/menit
     return (avgDeltaPerSample / 1000) / (intervalSeconds / 60);
