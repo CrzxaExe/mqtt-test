@@ -101,16 +101,20 @@ onBeforeUnmount(() => {
       <DataCard label="Room" :data="kamar"  class="col-span-2"/>
     </section>
 
-    <section class="grid grid-cols-1 md:grid-cols-2 mt-2 lg:mt-4">
+    <section class="grid grid-cols-1 md:grid-cols-2 mt-2 lg:mt-4 gap-2">
       <h2 class="sm:col-span-2 md:col-span-3 text-2xl font-semibold text-slate-600">History</h2>
 
-      <ul class="">
-        <li v-for="weight, key in data.berat" :key>
+      <ul class="bg-zinc-200 rounded-xl border border-slate-300">
+        <span class="block w-full text-center text-xl py-2">Weights (g)</span>
+        
+        <li v-for="weight, key in data.berat" :key class="px-3 lg:px-6 py-1 not-last:border-b border-slate-200">
           {{ weight }} g
         </li>
       </ul>
-      <ul class="">
-        <li v-for="persen, key in data.persen" :key>
+      <ul class="border border-slate-200 rounded-xl">
+        <span class="block w-full text-center text-xl py-2">Percent (%)</span>
+
+        <li v-for="persen, key in data.persen" :key class="px-3 lg:px-6 py-1 not-last:border-b border-slate-200">
           {{ persen }} %
         </li>
       </ul>
